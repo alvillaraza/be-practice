@@ -3,14 +3,14 @@ How to set up backend server
 - create new repo on github
 
 How to add gitignore
-1. npm init -y
-2. npx gitignore node
+1. npm init -y     // create package.json file to store a list of dependencies
+2. npx gitignore node     // create gitignore file to prevent node modules from being pushed to git repository
 
 Create index.js
 - run "touch index.js" on terminal (optional)
 
 Install Nodemon
-- npm i nodemon -D
+- npm i nodemon -D    // enable code to automatically restart when changes are saved to index.js, install as a devDependency (-D)
 
 Run server using nodemon for deploying to heroku 
 go to package.json and add script:
@@ -20,7 +20,12 @@ go to package.json and add script:
 }
 
 
-npm i express helmet knex sqlite3
+// Install Additional Dependencies
+npm i express knex helmet sqlite3
+// express = The Express framework is built on top of the node. js framework and helps in fast-tracking development of server-based applications.
+// knex = Knex is a JavaScript query builder for relational databases including PostgreSQL, MySQL, SQLite3, and Oracle.
+// helmet = Helmet is a useful Node module that helps you secure HTTP headers returned by your Express apps.
+// sqlite3 = Sqlite3 can be used to create a database, define tables, insert and change rows, run queries and manage a SQLite database file.
 
 Write code in index.js 
 - see index.js file for code
@@ -64,4 +69,5 @@ clients table
 Create a connection.js file in database manually
 add code in index.js to access it:
 - const db = require('./database/connection.js');
+
 
