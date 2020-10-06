@@ -1,10 +1,12 @@
 const express = require('express')
 const helmet = require('helmet'); //provides security defaults
 
+const db = require('./database/connection.js');
+
 const server = express();
 
 server.use(helmet());
-server.use(express.json());  //middleware takes json data and put it in object as javascript
+server.use(express.json());  //middleware takes json data and put it in an object so javascript can read it
 
 server.get("/", (req, res) => {
   res.status(200).json({ hello: "and welcome" });
